@@ -1,8 +1,8 @@
 aid: cursor
 name: Cursor
 description: >-
-  Built to make you extraordinarily productive, Cursor is the best way to code
-  with AI. 
+  Built to make you extraordinarily productive, Cursor is the best way to code with
+  AI.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -18,8 +18,8 @@ apis:
   - aid: cursor:cursor
     name: Cursor
     description: >-
-      Built to make you extraordinarily productive, Cursor is the best way to
-      code with AI. 
+      Built to make you extraordinarily productive, Cursor is the best way to code
+      with AI.
     humanURL: https://cursor.com/en
     tags:
       - API
