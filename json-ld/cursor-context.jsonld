@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/vocabulary/cursor-vocabulary.yml#",
+    "schema": "https://schema.org/",
+    "cursor": "https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/vocabulary/cursor-vocabulary.yml#",
+    "Member": "cursor:Member",
+    "Team": "cursor:Team",
+    "BillingGroup": "cursor:BillingGroup",
+    "AuditEvent": "cursor:AuditEvent",
+    "DailyUsage": "cursor:DailyUsage",
+    "UserSpend": "cursor:UserSpend",
+    "RepoBlocklist": "cursor:RepoBlocklist",
+    "id": "@id",
+    "type": "@type",
+    "email": "schema:email",
+    "name": "schema:name",
+    "role": "cursor:role",
+    "isRemoved": "cursor:isRemoved",
+    "date": "schema:dateCreated",
+    "timestamp": "schema:dateCreated",
+    "eventType": "cursor:eventType",
+    "userId": "cursor:userId",
+    "userEmail": "schema:email",
+    "linesAdded": "cursor:linesAdded",
+    "linesDeleted": "cursor:linesDeleted",
+    "completions": "cursor:completions",
+    "chatRequests": "cursor:chatRequests",
+    "modelUsage": "cursor:modelUsage",
+    "spendCents": "cursor:spendCents",
+    "hardLimit": "cursor:hardLimit"
+  }
+}

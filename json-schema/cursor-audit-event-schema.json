@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/json-schema/cursor-audit-event-schema.json",
+  "title": "Cursor Audit Event",
+  "description": "An audit log event from the Cursor Admin API.",
+  "type": "object",
+  "required": ["id", "timestamp", "eventType"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "eventType": {
+      "type": "string",
+      "description": "Type of audit event (e.g. login, member.added, settings.updated)."
+    },
+    "userId": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "string",
+      "format": "email"
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

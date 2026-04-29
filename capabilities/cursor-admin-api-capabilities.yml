@@ -1,0 +1,61 @@
+name: Cursor Admin API Capabilities
+description: >-
+  Capability profile for the Cursor Admin API derived from its OpenAPI definition.
+  Each capability maps to one or more endpoints exposed at api.cursor.com and reflects
+  the operational scope available to team and enterprise administrators.
+modified: '2026-04-28'
+api: cursor-admin-api
+capabilities:
+  - id: list-members
+    name: List Team Members
+    description: Retrieve all team members and their details.
+    operations:
+      - GET /teams/members
+  - id: remove-member
+    name: Remove Team Member
+    description: Programmatically offboard a member (Enterprise only).
+    operations:
+      - POST /teams/remove-member
+  - id: set-spend-limit
+    name: Set User Spend Limit
+    description: Apply a hard spend cap to an individual user (Enterprise only).
+    operations:
+      - POST /teams/user-spend-limit
+  - id: get-audit-logs
+    name: Get Audit Logs
+    description: Retrieve filtered security and configuration audit events.
+    operations:
+      - GET /teams/audit-logs
+  - id: daily-usage
+    name: Get Daily Usage
+    description: Retrieve daily aggregated per-user usage metrics.
+    operations:
+      - POST /teams/daily-usage-data
+  - id: get-spend
+    name: Get Spend
+    description: Retrieve per-user spend for the current billing cycle.
+    operations:
+      - POST /teams/spend
+  - id: filtered-usage-events
+    name: Get Filtered Usage Events
+    description: Retrieve granular event-level usage data including tokens and costs.
+    operations:
+      - POST /teams/filtered-usage-events
+  - id: manage-billing-groups
+    name: Manage Billing Groups
+    description: Create, read, update, and delete billing groups and their membership.
+    operations:
+      - GET /teams/groups
+      - POST /teams/groups
+      - GET /teams/groups/{groupId}
+      - PATCH /teams/groups/{groupId}
+      - DELETE /teams/groups/{groupId}
+      - POST /teams/groups/{groupId}/members
+      - DELETE /teams/groups/{groupId}/members
+  - id: manage-repo-blocklists
+    name: Manage Repository Indexing Blocklists
+    description: Configure file patterns excluded from Cursor's repository indexer.
+    operations:
+      - GET /settings/repo-blocklists/repos
+      - POST /settings/repo-blocklists/repos/upsert
+      - DELETE /settings/repo-blocklists/repos/{repoId}

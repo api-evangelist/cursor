@@ -1,0 +1,46 @@
+extends: spectral:oas
+rules:
+  cursor-admin-info-contact:
+    description: Cursor Admin API spec must declare a contact.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+  cursor-admin-server-https:
+    description: Cursor Admin API server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://'
+  cursor-admin-base-url:
+    description: Cursor Admin API base URL must be api.cursor.com.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://api\.cursor\.com'
+  cursor-admin-basic-auth:
+    description: Cursor Admin API uses HTTP Basic auth via securitySchemes.
+    severity: warn
+    given: $.components.securitySchemes
+    then:
+      field: BasicAuth
+      function: truthy
+  cursor-admin-tags-required:
+    description: Every operation must declare at least one tag.
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: tags
+      function: truthy
+  cursor-admin-operation-id-required:
+    description: Every operation must declare an operationId.
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: truthy

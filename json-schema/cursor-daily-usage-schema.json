@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/json-schema/cursor-daily-usage-schema.json",
+  "title": "Cursor Daily Usage Record",
+  "description": "Daily usage metrics record produced by the Cursor Admin API daily-usage-data endpoint.",
+  "type": "object",
+  "required": ["date", "userId"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Calendar date for the usage record."
+    },
+    "userId": {
+      "type": "string",
+      "description": "Identifier of the user the metrics belong to."
+    },
+    "linesAdded": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "linesDeleted": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completions": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "chatRequests": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "modelUsage": {
+      "type": "object",
+      "description": "Map of model name to request count.",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  }
+}

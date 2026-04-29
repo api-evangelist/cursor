@@ -1,0 +1,47 @@
+name: Cursor Vocabulary
+description: >-
+  Controlled vocabulary describing the core concepts of the Cursor Admin API
+  surface, including team members, billing groups, audit events, daily usage
+  metrics, per-user spend records, and repository indexing blocklists.
+modified: '2026-04-28'
+terms:
+  - term: Member
+    description: A user belonging to a Cursor team or enterprise.
+    properties:
+      - id
+      - email
+      - name
+      - role
+      - isRemoved
+  - term: Team
+    description: A Cursor team or enterprise organization that owns members and billing.
+  - term: BillingGroup
+    description: A grouping of members used for cost allocation and chargeback inside an enterprise.
+  - term: AuditEvent
+    description: A timestamped audit log entry capturing security or configuration activity.
+    properties:
+      - id
+      - timestamp
+      - eventType
+      - userId
+      - userEmail
+      - details
+  - term: DailyUsage
+    description: An aggregated per-user, per-day record of editor activity and AI model usage.
+    properties:
+      - date
+      - userId
+      - linesAdded
+      - linesDeleted
+      - completions
+      - chatRequests
+      - modelUsage
+  - term: UserSpend
+    description: A per-user spending record for the current billing cycle.
+    properties:
+      - userId
+      - userEmail
+      - spendCents
+      - hardLimit
+  - term: RepoBlocklist
+    description: A repository-scoped list of glob patterns excluded from Cursor indexing.

@@ -1,0 +1,457 @@
+openapi: 3.0.3
+info:
+  title: Cursor Admin API
+  description: >-
+    The Cursor Admin API allows team and enterprise administrators to programmatically
+    manage members, billing groups, audit logs, daily usage data, spending, repository
+    indexing blocklists, and per-user spend limits for their Cursor team. Authentication
+    uses HTTP Basic Authentication with the API key as the username and an empty password.
+  version: 1.0.0
+  contact:
+    name: Cursor Support
+    url: https://cursor.com/support
+servers:
+  - url: https://api.cursor.com
+    description: Cursor Admin API production endpoint
+security:
+  - BasicAuth: []
+tags:
+  - name: Members
+    description: Manage team members
+  - name: Audit Logs
+    description: Retrieve security and configuration audit events
+  - name: Usage
+    description: Daily usage and granular usage event data
+  - name: Spend
+    description: Spending data and per-user spend limits
+  - name: Groups
+    description: Billing groups for cost allocation
+  - name: Repo Blocklists
+    description: Repository indexing blocklist configuration
+paths:
+  /teams/members:
+    get:
+      tags:
+        - Members
+      summary: Get team members
+      description: Retrieve all team members and their details (id, email, name, role, removal status).
+      operationId: getTeamMembers
+      responses:
+        '200':
+          description: List of team members
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  members:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Member'
+  /teams/remove-member:
+    post:
+      tags:
+        - Members
+      summary: Remove team member
+      description: Programmatically offboard a user. Enterprise only.
+      operationId: removeTeamMember
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - userId
+              properties:
+                userId:
+                  type: string
+      responses:
+        '200':
+          description: Member removed
+  /teams/user-spend-limit:
+    post:
+      tags:
+        - Spend
+      summary: Set user spend limit
+      description: Control an individual user's spend cap in dollars. Enterprise only.
+      operationId: setUserSpendLimit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - userId
+                - hardLimit
+              properties:
+                userId:
+                  type: string
+                hardLimit:
+                  type: number
+                  description: Hard spend cap in USD
+      responses:
+        '200':
+          description: Spend limit applied
+  /teams/audit-logs:
+    get:
+      tags:
+        - Audit Logs
+      summary: Get audit logs
+      description: Fetch audit log events with optional filtering by date, event type, and user.
+      operationId: getAuditLogs
+      parameters:
+        - in: query
+          name: startDate
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: endDate
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: eventType
+          schema:
+            type: string
+        - in: query
+          name: userId
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Audit log entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  events:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuditEvent'
+  /teams/daily-usage-data:
+    post:
+      tags:
+        - Usage
+      summary: Get daily usage data
+      description: Aggregated daily usage metrics including lines added/deleted, completions, chat requests, and model usage.
+      operationId: getDailyUsageData
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startDate:
+                  type: string
+                  format: date
+                endDate:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Daily usage metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DailyUsage'
+  /teams/spend:
+    post:
+      tags:
+        - Spend
+      summary: Get spending data
+      description: Per-user spend for the current billing cycle with search and sorting.
+      operationId: getSpend
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                searchTerm:
+                  type: string
+                sortBy:
+                  type: string
+                sortDirection:
+                  type: string
+                  enum: [asc, desc]
+      responses:
+        '200':
+          description: Per-user spend data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  spend:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UserSpend'
+  /teams/filtered-usage-events:
+    post:
+      tags:
+        - Usage
+      summary: Get filtered usage events
+      description: Granular event-level usage data including token consumption and costs.
+      operationId: getFilteredUsageEvents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startDate:
+                  type: string
+                  format: date
+                endDate:
+                  type: string
+                  format: date
+                userId:
+                  type: string
+      responses:
+        '200':
+          description: Filtered usage events
+  /teams/groups:
+    get:
+      tags:
+        - Groups
+      summary: List billing groups
+      operationId: listGroups
+      responses:
+        '200':
+          description: List of billing groups
+    post:
+      tags:
+        - Groups
+      summary: Create billing group
+      operationId: createGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Group created
+  /teams/groups/{groupId}:
+    parameters:
+      - in: path
+        name: groupId
+        required: true
+        schema:
+          type: string
+    get:
+      tags:
+        - Groups
+      summary: Get billing group
+      operationId: getGroup
+      responses:
+        '200':
+          description: Group detail
+    patch:
+      tags:
+        - Groups
+      summary: Update billing group
+      operationId: updateGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':
+          description: Group updated
+    delete:
+      tags:
+        - Groups
+      summary: Delete billing group
+      operationId: deleteGroup
+      responses:
+        '204':
+          description: Group deleted
+  /teams/groups/{groupId}/members:
+    parameters:
+      - in: path
+        name: groupId
+        required: true
+        schema:
+          type: string
+    post:
+      tags:
+        - Groups
+      summary: Add members to group
+      operationId: addGroupMembers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIds:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Members added
+    delete:
+      tags:
+        - Groups
+      summary: Remove members from group
+      operationId: removeGroupMembers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIds:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Members removed
+  /settings/repo-blocklists/repos:
+    get:
+      tags:
+        - Repo Blocklists
+      summary: Get repo blocklists
+      operationId: getRepoBlocklists
+      responses:
+        '200':
+          description: Configured blocklists
+  /settings/repo-blocklists/repos/upsert:
+    post:
+      tags:
+        - Repo Blocklists
+      summary: Upsert repo blocklists
+      operationId: upsertRepoBlocklists
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                repos:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      repoUrl:
+                        type: string
+                      patterns:
+                        type: array
+                        items:
+                          type: string
+      responses:
+        '200':
+          description: Blocklists upserted
+  /settings/repo-blocklists/repos/{repoId}:
+    delete:
+      tags:
+        - Repo Blocklists
+      summary: Remove repo from blocklist
+      operationId: deleteRepoBlocklist
+      parameters:
+        - in: path
+          name: repoId
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Removed
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Basic Authentication with API key as the username and empty password.
+  schemas:
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        role:
+          type: string
+          enum: [member, admin, owner]
+        isRemoved:
+          type: boolean
+    AuditEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        eventType:
+          type: string
+        userId:
+          type: string
+        userEmail:
+          type: string
+        details:
+          type: object
+    DailyUsage:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        userId:
+          type: string
+        linesAdded:
+          type: integer
+        linesDeleted:
+          type: integer
+        completions:
+          type: integer
+        chatRequests:
+          type: integer
+        modelUsage:
+          type: object
+          additionalProperties:
+            type: integer
+    UserSpend:
+      type: object
+      properties:
+        userId:
+          type: string
+        userEmail:
+          type: string
+        spendCents:
+          type: integer
+        hardLimit:
+          type: number
