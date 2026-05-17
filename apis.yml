@@ -1,7 +1,7 @@
 aid: cursor
 url: https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/apis.yml
 name: Cursor
-x-type: company
+kind: company
 description: >-
   Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI
   integration: agentic edits, codebase chat, autocomplete, and tab-completion. Offers
