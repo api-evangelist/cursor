@@ -1,0 +1,94 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cursor Admin API — Audit Logs
+  description: 'Cursor Admin API — Audit Logs. 1 operations. Lead operation: Get audit logs. Self-contained Naftiko capability
+    covering one Cursor business surface.'
+  tags:
+  - Cursor
+  - Audit Logs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CURSOR_API_KEY: CURSOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: admin-audit-logs
+    baseUri: https://api.cursor.com
+    description: Cursor Admin API — Audit Logs business capability. Self-contained, no shared references.
+    resources:
+    - name: teams-audit-logs
+      path: /teams/audit-logs
+      operations:
+      - name: getauditlogs
+        method: GET
+        description: Get audit logs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: startDate
+          in: query
+          type: string
+        - name: endDate
+          in: query
+          type: string
+        - name: eventType
+          in: query
+          type: string
+        - name: userId
+          in: query
+          type: string
+    authentication:
+      type: basic
+      username: '{{env.CURSOR_USER}}'
+      password: '{{env.CURSOR_PASS}}'
+  exposes:
+  - type: rest
+    namespace: admin-audit-logs-rest
+    port: 8080
+    description: REST adapter for Cursor Admin API — Audit Logs. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/teams/audit-logs
+      name: teams-audit-logs
+      description: REST surface for teams-audit-logs.
+      operations:
+      - method: GET
+        name: getauditlogs
+        description: Get audit logs
+        call: admin-audit-logs.getauditlogs
+        with:
+          startDate: rest.startDate
+          endDate: rest.endDate
+          eventType: rest.eventType
+          userId: rest.userId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: admin-audit-logs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Cursor Admin API — Audit Logs. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-audit-logs
+      description: Get audit logs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: admin-audit-logs.getauditlogs
+      with:
+        startDate: tools.startDate
+        endDate: tools.endDate
+        eventType: tools.eventType
+        userId: tools.userId
+      outputParameters:
+      - type: object
+        mapping: $.
