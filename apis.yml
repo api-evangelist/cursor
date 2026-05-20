@@ -7,101 +7,103 @@ description: 'Cursor is an AI-first code editor by Anysphere, forked from VS Cod
   a public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.'
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- AI
-- Developer Tools
-- Code Editor
-- Agent
-- IDE
-- Cloud Agents
+  - AI
+  - Developer Tools
+  - Code Editor
+  - Agent
+  - IDE
+  - Cloud Agents
 created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: cursor:admin
-  name: Cursor Admin API
-  description: 'Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered
-    usage events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.'
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cursor.com/docs/account/teams/admin-api
-  baseURL: https://api.cursor.com
-  tags:
-  - Admin
-  - Teams
-  - Usage
-  - Billing
-  properties:
-  - type: Documentation
-    url: https://cursor.com/docs/account/teams/admin-api
-  - type: APIIndex
-    url: https://cursor.com/docs/api
-  - type: NaftikoCapability
-    url: capabilities/admin-audit-logs.yaml
-  - type: NaftikoCapability
-    url: capabilities/admin-groups.yaml
-  - type: NaftikoCapability
-    url: capabilities/admin-members.yaml
-  - type: NaftikoCapability
-    url: capabilities/admin-repo-blocklists.yaml
-  - type: NaftikoCapability
-    url: capabilities/admin-spend.yaml
-  - type: NaftikoCapability
-    url: capabilities/admin-usage.yaml
-- aid: cursor:analytics
-  name: Cursor Analytics API
-  description: Usage insights, AI metrics, and model usage stats for Enterprise teams.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cursor.com/docs/account/teams/analytics-api
-  baseURL: https://api.cursor.com
-  tags:
-  - Analytics
-  - Teams
-  - Metrics
-  properties:
-  - type: Documentation
-    url: https://cursor.com/docs/account/teams/analytics-api
-- aid: cursor:ai-code-tracking
-  name: Cursor AI Code Tracking API
-  description: Track AI-generated code at the commit level for Enterprise teams.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cursor.com/docs/api
-  baseURL: https://api.cursor.com
-  tags:
-  - AI Tracking
-  - Commits
-  - Teams
-  properties:
-  - type: Documentation
-    url: https://cursor.com/docs/api
-- aid: cursor:cloud-agents
-  name: Cursor Cloud Agents API
-  description: Create and manage AI coding agents in the cloud. Beta, available across all plans.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cursor.com/docs/api
-  baseURL: https://api.cursor.com
-  tags:
-  - Agents
-  - Cloud
-  - Beta
-  properties:
-  - type: Documentation
-    url: https://cursor.com/docs/api
-  - type: TypeScriptSDK
-    url: https://cursor.com/docs/api
+  - aid: cursor:admin
+    name: Cursor Admin API
+    description: 'Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered
+      usage events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.'
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cursor.com/docs/account/teams/admin-api
+    baseURL: https://api.cursor.com
+    tags:
+    - Admin
+    - Teams
+    - Usage
+    - Billing
+    properties:
+    - type: Documentation
+      url: https://cursor.com/docs/account/teams/admin-api
+    - type: APIIndex
+      url: https://cursor.com/docs/api
+    - type: NaftikoCapability
+      url: capabilities/admin-audit-logs.yaml
+    - type: NaftikoCapability
+      url: capabilities/admin-groups.yaml
+    - type: NaftikoCapability
+      url: capabilities/admin-members.yaml
+    - type: NaftikoCapability
+      url: capabilities/admin-repo-blocklists.yaml
+    - type: NaftikoCapability
+      url: capabilities/admin-spend.yaml
+    - type: NaftikoCapability
+      url: capabilities/admin-usage.yaml
+  - aid: cursor:analytics
+    name: Cursor Analytics API
+    description: Usage insights, AI metrics, and model usage stats for Enterprise teams.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cursor.com/docs/account/teams/analytics-api
+    baseURL: https://api.cursor.com
+    tags:
+    - Analytics
+    - Teams
+    - Metrics
+    properties:
+    - type: Documentation
+      url: https://cursor.com/docs/account/teams/analytics-api
+  - aid: cursor:ai-code-tracking
+    name: Cursor AI Code Tracking API
+    description: Track AI-generated code at the commit level for Enterprise teams.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cursor.com/docs/api
+    baseURL: https://api.cursor.com
+    tags:
+    - AI Tracking
+    - Commits
+    - Teams
+    properties:
+    - type: Documentation
+      url: https://cursor.com/docs/api
+  - aid: cursor:cloud-agents
+    name: Cursor Cloud Agents API
+    description: Create and manage AI coding agents in the cloud. Beta, available across all plans.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cursor.com/docs/api
+    baseURL: https://api.cursor.com
+    tags:
+    - Agents
+    - Cloud
+    - Beta
+    properties:
+    - type: Documentation
+      url: https://cursor.com/docs/api
+    - type: TypeScriptSDK
+      url: https://cursor.com/docs/api
 common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/cursorai
-- type: Website
-  url: https://cursor.com/
-- type: Documentation
-  url: https://cursor.com/docs
-- type: Pricing
-  url: https://cursor.com/pricing
-- type: Plans
-  url: plans/cursor-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/cursor-rate-limits.yml
-- type: FinOps
-  url: finops/cursor-finops.yml
+  - type: GitHubOrganization
+    url: https://github.com/cursor
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/cursorai
+  - type: Website
+    url: https://cursor.com/
+  - type: Documentation
+    url: https://cursor.com/docs
+  - type: Pricing
+    url: https://cursor.com/pricing
+  - type: Plans
+    url: plans/cursor-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cursor-rate-limits.yml
+  - type: FinOps
+    url: finops/cursor-finops.yml
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
