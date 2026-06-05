@@ -2,9 +2,10 @@ aid: cursor
 url: https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/apis.yml
 name: Cursor
 kind: company
-description: 'Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits,
-  codebase chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes
-  a public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.'
+description: >-
+  Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase
+  chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a
+  public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -19,33 +20,22 @@ specificationVersion: '0.19'
 apis:
   - aid: cursor:admin
     name: Cursor Admin API
-    description: 'Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered
-      usage events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.'
+    description: >-
+      Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered usage
+      events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://cursor.com/docs/account/teams/admin-api
     baseURL: https://api.cursor.com
     tags:
-    - Admin
-    - Teams
-    - Usage
-    - Billing
+      - Admin
+      - Teams
+      - Usage
+      - Billing
     properties:
-    - type: Documentation
-      url: https://cursor.com/docs/account/teams/admin-api
-    - type: APIIndex
-      url: https://cursor.com/docs/api
-    - type: NaftikoCapability
-      url: capabilities/admin-audit-logs.yaml
-    - type: NaftikoCapability
-      url: capabilities/admin-groups.yaml
-    - type: NaftikoCapability
-      url: capabilities/admin-members.yaml
-    - type: NaftikoCapability
-      url: capabilities/admin-repo-blocklists.yaml
-    - type: NaftikoCapability
-      url: capabilities/admin-spend.yaml
-    - type: NaftikoCapability
-      url: capabilities/admin-usage.yaml
+      - type: Documentation
+        url: https://cursor.com/docs/account/teams/admin-api
+      - type: APIIndex
+        url: https://cursor.com/docs/api
   - aid: cursor:analytics
     name: Cursor Analytics API
     description: Usage insights, AI metrics, and model usage stats for Enterprise teams.
@@ -53,12 +43,12 @@ apis:
     humanURL: https://cursor.com/docs/account/teams/analytics-api
     baseURL: https://api.cursor.com
     tags:
-    - Analytics
-    - Teams
-    - Metrics
+      - Analytics
+      - Teams
+      - Metrics
     properties:
-    - type: Documentation
-      url: https://cursor.com/docs/account/teams/analytics-api
+      - type: Documentation
+        url: https://cursor.com/docs/account/teams/analytics-api
   - aid: cursor:ai-code-tracking
     name: Cursor AI Code Tracking API
     description: Track AI-generated code at the commit level for Enterprise teams.
@@ -66,12 +56,12 @@ apis:
     humanURL: https://cursor.com/docs/api
     baseURL: https://api.cursor.com
     tags:
-    - AI Tracking
-    - Commits
-    - Teams
+      - AI Tracking
+      - Commits
+      - Teams
     properties:
-    - type: Documentation
-      url: https://cursor.com/docs/api
+      - type: Documentation
+        url: https://cursor.com/docs/api
   - aid: cursor:cloud-agents
     name: Cursor Cloud Agents API
     description: Create and manage AI coding agents in the cloud. Beta, available across all plans.
@@ -79,14 +69,14 @@ apis:
     humanURL: https://cursor.com/docs/api
     baseURL: https://api.cursor.com
     tags:
-    - Agents
-    - Cloud
-    - Beta
+      - Agents
+      - Cloud
+      - Beta
     properties:
-    - type: Documentation
-      url: https://cursor.com/docs/api
-    - type: TypeScriptSDK
-      url: https://cursor.com/docs/api
+      - type: Documentation
+        url: https://cursor.com/docs/api
+      - type: TypeScriptSDK
+        url: https://cursor.com/docs/api
 common:
   - type: GitHubOrganization
     url: https://github.com/cursor
