@@ -6,7 +6,7 @@ description: >-
   Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase
   chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a
   public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Developer Tools
@@ -23,7 +23,7 @@ apis:
     description: >-
       Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered usage
       events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cursor.com/docs/account/teams/admin-api
     baseURL: https://api.cursor.com
     tags:
@@ -39,7 +39,7 @@ apis:
   - aid: cursor:analytics
     name: Cursor Analytics API
     description: Usage insights, AI metrics, and model usage stats for Enterprise teams.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cursor.com/docs/account/teams/analytics-api
     baseURL: https://api.cursor.com
     tags:
@@ -52,7 +52,7 @@ apis:
   - aid: cursor:ai-code-tracking
     name: Cursor AI Code Tracking API
     description: Track AI-generated code at the commit level for Enterprise teams.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cursor.com/docs/api
     baseURL: https://api.cursor.com
     tags:
@@ -65,7 +65,7 @@ apis:
   - aid: cursor:cloud-agents
     name: Cursor Cloud Agents API
     description: Create and manage AI coding agents in the cloud. Beta, available across all plans.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cursor.com/docs/api
     baseURL: https://api.cursor.com
     tags:
