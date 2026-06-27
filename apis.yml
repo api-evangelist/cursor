@@ -94,7 +94,7 @@ common:
     url: rate-limits/cursor-rate-limits.yml
   - type: FinOps
     url: finops/cursor-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://cursor.com/llms.txt
 maintainers:
   - FN: Kin Lane
