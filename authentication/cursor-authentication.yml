@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cursor-admin-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: Basic Authentication with API key as the username and empty password.
+  sources:
+  - openapi/cursor-admin-api-openapi.yml

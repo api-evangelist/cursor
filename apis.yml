@@ -78,6 +78,12 @@ apis:
       - type: TypeScriptSDK
         url: https://cursor.com/docs/api
 common:
+  - type: VulnerabilityDisclosure
+    url: security/cursor-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/cursor-domain-security.yml
+  - type: Authentication
+    url: authentication/cursor-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/cursor
   - type: LinkedIn
@@ -96,6 +102,8 @@ common:
     url: finops/cursor-finops.yml
   - type: LlmsText
     url: https://cursor.com/llms.txt
+  - url: https://cursor.com/blog
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
