@@ -78,6 +78,8 @@ apis:
       - type: TypeScriptSDK
         url: https://cursor.com/docs/api
 common:
+  - type: AgenticAccess
+    url: agentic-access/cursor-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/cursor-vulnerability-disclosure.yml
   - type: DomainSecurity
