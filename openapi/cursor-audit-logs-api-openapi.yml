@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: Cursor Admin Audit Logs API
+  description: The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.
+  version: 1.0.0
+  contact:
+    name: Cursor Support
+    url: https://cursor.com/support
+servers:
+- url: https://api.cursor.com
+  description: Cursor Admin API production endpoint
+security:
+- BasicAuth: []
+tags:
+- name: Audit Logs
+  description: Retrieve security and configuration audit events
+paths:
+  /teams/audit-logs:
+    get:
+      tags:
+      - Audit Logs
+      summary: Get audit logs
+      description: Fetch audit log events with optional filtering by date, event type, and user.
+      operationId: getAuditLogs
+      parameters:
+      - in: query
+        name: startDate
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: endDate
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: eventType
+        schema:
+          type: string
+      - in: query
+        name: userId
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Audit log entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  events:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuditEvent'
+components:
+  schemas:
+    AuditEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        eventType:
+          type: string
+        userId:
+          type: string
+        userEmail:
+          type: string
+        details:
+          type: object
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Basic Authentication with API key as the username and empty password.

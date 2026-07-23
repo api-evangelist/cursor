@@ -1,0 +1,101 @@
+openapi: 3.0.3
+info:
+  title: Cursor Admin Audit Logs Usage API
+  description: The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.
+  version: 1.0.0
+  contact:
+    name: Cursor Support
+    url: https://cursor.com/support
+servers:
+- url: https://api.cursor.com
+  description: Cursor Admin API production endpoint
+security:
+- BasicAuth: []
+tags:
+- name: Usage
+  description: Daily usage and granular usage event data
+paths:
+  /teams/daily-usage-data:
+    post:
+      tags:
+      - Usage
+      summary: Get daily usage data
+      description: Aggregated daily usage metrics including lines added/deleted, completions, chat requests, and model usage.
+      operationId: getDailyUsageData
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startDate:
+                  type: string
+                  format: date
+                endDate:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Daily usage metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DailyUsage'
+  /teams/filtered-usage-events:
+    post:
+      tags:
+      - Usage
+      summary: Get filtered usage events
+      description: Granular event-level usage data including token consumption and costs.
+      operationId: getFilteredUsageEvents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startDate:
+                  type: string
+                  format: date
+                endDate:
+                  type: string
+                  format: date
+                userId:
+                  type: string
+      responses:
+        '200':
+          description: Filtered usage events
+components:
+  schemas:
+    DailyUsage:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        userId:
+          type: string
+        linesAdded:
+          type: integer
+        linesDeleted:
+          type: integer
+        completions:
+          type: integer
+        chatRequests:
+          type: integer
+        modelUsage:
+          type: object
+          additionalProperties:
+            type: integer
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Basic Authentication with API key as the username and empty password.

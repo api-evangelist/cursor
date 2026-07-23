@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: Cursor Admin Audit Logs Repo Blocklists API
+  description: The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.
+  version: 1.0.0
+  contact:
+    name: Cursor Support
+    url: https://cursor.com/support
+servers:
+- url: https://api.cursor.com
+  description: Cursor Admin API production endpoint
+security:
+- BasicAuth: []
+tags:
+- name: Repo Blocklists
+  description: Repository indexing blocklist configuration
+paths:
+  /settings/repo-blocklists/repos:
+    get:
+      tags:
+      - Repo Blocklists
+      summary: Get repo blocklists
+      operationId: getRepoBlocklists
+      responses:
+        '200':
+          description: Configured blocklists
+  /settings/repo-blocklists/repos/upsert:
+    post:
+      tags:
+      - Repo Blocklists
+      summary: Upsert repo blocklists
+      operationId: upsertRepoBlocklists
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                repos:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      repoUrl:
+                        type: string
+                      patterns:
+                        type: array
+                        items:
+                          type: string
+      responses:
+        '200':
+          description: Blocklists upserted
+  /settings/repo-blocklists/repos/{repoId}:
+    delete:
+      tags:
+      - Repo Blocklists
+      summary: Remove repo from blocklist
+      operationId: deleteRepoBlocklist
+      parameters:
+      - in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Removed
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Basic Authentication with API key as the username and empty password.

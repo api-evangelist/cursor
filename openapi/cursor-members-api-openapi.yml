@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: Cursor Admin Audit Logs Members API
+  description: The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.
+  version: 1.0.0
+  contact:
+    name: Cursor Support
+    url: https://cursor.com/support
+servers:
+- url: https://api.cursor.com
+  description: Cursor Admin API production endpoint
+security:
+- BasicAuth: []
+tags:
+- name: Members
+  description: Manage team members
+paths:
+  /teams/members:
+    get:
+      tags:
+      - Members
+      summary: Get team members
+      description: Retrieve all team members and their details (id, email, name, role, removal status).
+      operationId: getTeamMembers
+      responses:
+        '200':
+          description: List of team members
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  members:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Member'
+  /teams/remove-member:
+    post:
+      tags:
+      - Members
+      summary: Remove team member
+      description: Programmatically offboard a user. Enterprise only.
+      operationId: removeTeamMember
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - userId
+              properties:
+                userId:
+                  type: string
+      responses:
+        '200':
+          description: Member removed
+components:
+  schemas:
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        role:
+          type: string
+          enum:
+          - member
+          - admin
+          - owner
+        isRemoved:
+          type: boolean
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Basic Authentication with API key as the username and empty password.
