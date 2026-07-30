@@ -6,7 +6,20 @@ description: >-
   Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase
   chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a
   public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cursor.png
 tags:
   - AI
   - Developer Tools
@@ -18,65 +31,125 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: cursor:admin
-    name: Cursor Admin API
-    description: >-
-      Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered usage
-      events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cursor.com/docs/account/teams/admin-api
-    baseURL: https://api.cursor.com
-    tags:
-      - Admin
-      - Teams
-      - Usage
-      - Billing
-    properties:
-      - type: Documentation
-        url: https://cursor.com/docs/account/teams/admin-api
-      - type: APIIndex
-        url: https://cursor.com/docs/api
-  - aid: cursor:analytics
-    name: Cursor Analytics API
-    description: Usage insights, AI metrics, and model usage stats for Enterprise teams.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cursor.com/docs/account/teams/analytics-api
-    baseURL: https://api.cursor.com
-    tags:
-      - Analytics
-      - Teams
-      - Metrics
-    properties:
-      - type: Documentation
-        url: https://cursor.com/docs/account/teams/analytics-api
-  - aid: cursor:ai-code-tracking
-    name: Cursor AI Code Tracking API
-    description: Track AI-generated code at the commit level for Enterprise teams.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cursor.com/docs/api
-    baseURL: https://api.cursor.com
-    tags:
-      - AI Tracking
-      - Commits
-      - Teams
-    properties:
-      - type: Documentation
-        url: https://cursor.com/docs/api
-  - aid: cursor:cloud-agents
-    name: Cursor Cloud Agents API
-    description: Create and manage AI coding agents in the cloud. Beta, available across all plans.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cursor.com/docs/api
-    baseURL: https://api.cursor.com
-    tags:
-      - Agents
-      - Cloud
-      - Beta
-    properties:
-      - type: Documentation
-        url: https://cursor.com/docs/api
-      - type: TypeScriptSDK
-        url: https://cursor.com/docs/api
+- aid: cursor:admin
+  name: Cursor Admin API
+  description: >-
+    Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered
+    usage events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Admin
+  - Teams
+  - Usage
+  - Billing
+  properties:
+  - type: Documentation
+    url: https://cursor.com/docs/account/teams/admin-api
+  - type: APIIndex
+    url: https://cursor.com/docs/api
+- aid: cursor:analytics
+  name: Cursor Analytics API
+  description: Usage insights, AI metrics, and model usage stats for Enterprise teams.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://cursor.com/docs/account/teams/analytics-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Analytics
+  - Teams
+  - Metrics
+  properties:
+  - type: Documentation
+    url: https://cursor.com/docs/account/teams/analytics-api
+- aid: cursor:ai-code-tracking
+  name: Cursor AI Code Tracking API
+  description: Track AI-generated code at the commit level for Enterprise teams.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://cursor.com/docs/api
+  baseURL: https://api.cursor.com
+  tags:
+  - AI Tracking
+  - Commits
+  - Teams
+  properties:
+  - type: Documentation
+    url: https://cursor.com/docs/api
+- aid: cursor:cloud-agents
+  name: Cursor Cloud Agents API
+  description: Create and manage AI coding agents in the cloud. Beta, available across all plans.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://cursor.com/docs/api
+  baseURL: https://api.cursor.com
+  tags:
+  - Agents
+  - Cloud
+  - Beta
+  properties:
+  - type: Documentation
+    url: https://cursor.com/docs/api
+  - type: TypeScriptSDK
+    url: https://cursor.com/docs/api
+- aid: cursor:cursor-audit-logs-api
+  name: Cursor Audit Logs API
+  description: Retrieve security and configuration audit events
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Audit Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/cursor-audit-logs-api-openapi.yml
+- aid: cursor:cursor-groups-api
+  name: Cursor Groups API
+  description: Billing groups for cost allocation
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/cursor-groups-api-openapi.yml
+- aid: cursor:cursor-members-api
+  name: Cursor Members API
+  description: Manage team members
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/cursor-members-api-openapi.yml
+- aid: cursor:cursor-repo-blocklists-api
+  name: Cursor Repo Blocklists API
+  description: Repository indexing blocklist configuration
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Repo Blocklists
+  properties:
+  - type: OpenAPI
+    url: openapi/cursor-repo-blocklists-api-openapi.yml
+- aid: cursor:cursor-spend-api
+  name: Cursor Spend API
+  description: Spending data and per-user spend limits
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Spend
+  properties:
+  - type: OpenAPI
+    url: openapi/cursor-spend-api-openapi.yml
+- aid: cursor:cursor-usage-api
+  name: Cursor Usage API
+  description: Daily usage and granular usage event data
+  humanURL: https://cursor.com/docs/account/teams/admin-api
+  baseURL: https://api.cursor.com
+  tags:
+  - Usage
+  properties:
+  - type: OpenAPI
+    url: openapi/cursor-usage-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/cursor-agentic-access.yml
