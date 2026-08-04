@@ -1,0 +1,24 @@
+{
+  "provider": "cursor",
+  "sources": [
+    "cursor-audit-logs-api-openapi.yml",
+    "cursor-groups-api-openapi.yml",
+    "cursor-members-api-openapi.yml",
+    "cursor-repo-blocklists-api-openapi.yml",
+    "cursor-spend-api-openapi.yml",
+    "cursor-usage-api-openapi.yml"
+  ],
+  "outputs": [
+    "cursor-audit-logs-api-openapi.yml",
+    "cursor-groups-api-openapi.yml",
+    "cursor-members-api-openapi.yml",
+    "cursor-repo-blocklists-api-openapi.yml",
+    "cursor-spend-api-openapi.yml",
+    "cursor-usage-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
