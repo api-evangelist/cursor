@@ -1,0 +1,218 @@
+{
+  "item": [
+    {
+      "id": "23e1d9f7-ba29-4f7b-a53d-28d45e90fb69",
+      "name": "Members",
+      "description": {
+        "content": "Manage team members",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eb84e05f-e930-46af-818e-70926a50fe22",
+          "name": "Get team members",
+          "request": {
+            "name": "Get team members",
+            "description": {
+              "content": "Retrieve all team members and their details (id, email, name, role, removal status).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81602b88-7a9c-423d-a0c9-f083c4e0ee76",
+              "name": "List of team members",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"members\": [\n    {\n      \"id\": \"string\",\n      \"email\": \"16QJjW2H1qdU@Eo.nyu\",\n      \"name\": \"string\",\n      \"role\": \"owner\",\n      \"isRemoved\": true\n    },\n    {\n      \"id\": \"string\",\n      \"email\": \"05HJ@fmRsrMikfbQWCdeAFIJdoabJEdzirhO.jeyi\",\n      \"name\": \"string\",\n      \"role\": \"admin\",\n      \"isRemoved\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d8ce405-2a07-48da-a397-1daec264b949",
+          "name": "Remove team member",
+          "request": {
+            "name": "Remove team member",
+            "description": {
+              "content": "Programmatically offboard a user. Enterprise only.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "remove-member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b5de4b8-628e-4e1e-a500-f9fb9b3aa563",
+              "name": "Member removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "remove-member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cursor.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "92cb99da-3855-4974-8565-58c7a3ff36a4",
+    "name": "Cursor Admin Audit Logs Members API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.\n\nContact Support:\n Name: Cursor Support",
+      "type": "text/plain"
+    }
+  }
+}

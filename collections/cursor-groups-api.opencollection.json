@@ -1,0 +1,153 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cursor Admin Audit Logs Groups API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List billing groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cursor.com/teams/groups"
+          },
+          "docs": "List billing groups"
+        },
+        {
+          "info": {
+            "name": "Create billing group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create billing group"
+        },
+        {
+          "info": {
+            "name": "Get billing group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cursor.com/teams/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get billing group"
+        },
+        {
+          "info": {
+            "name": "Update billing group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.cursor.com/teams/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update billing group"
+        },
+        {
+          "info": {
+            "name": "Delete billing group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.cursor.com/teams/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete billing group"
+        },
+        {
+          "info": {
+            "name": "Add members to group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/groups/:groupId/members",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add members to group"
+        },
+        {
+          "info": {
+            "name": "Remove members from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.cursor.com/teams/groups/:groupId/members",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove members from group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

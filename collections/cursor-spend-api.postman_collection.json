@@ -1,0 +1,239 @@
+{
+  "item": [
+    {
+      "id": "a52d3fb0-a428-4784-a124-09f3833d6b27",
+      "name": "Spend",
+      "description": {
+        "content": "Spending data and per-user spend limits",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b5a953d-53cb-44fc-9065-86c075d31a92",
+          "name": "Set user spend limit",
+          "request": {
+            "name": "Set user spend limit",
+            "description": {
+              "content": "Control an individual user's spend cap in dollars. Enterprise only.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "user-spend-limit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"<string>\",\n  \"hardLimit\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5eb1469c-3efb-4d17-bc87-a1b1f241dd98",
+              "name": "Spend limit applied",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "user-spend-limit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string>\",\n  \"hardLimit\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f098ad39-32a5-4ddf-9e6c-09d677d1f6cc",
+          "name": "Get spending data",
+          "request": {
+            "name": "Get spending data",
+            "description": {
+              "content": "Per-user spend for the current billing cycle with search and sorting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "spend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"searchTerm\": \"<string>\",\n  \"sortBy\": \"<string>\",\n  \"sortDirection\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dcc59cd4-6462-4a26-b272-e08201b78062",
+              "name": "Per-user spend data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "spend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"searchTerm\": \"<string>\",\n  \"sortBy\": \"<string>\",\n  \"sortDirection\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spend\": [\n    {\n      \"userId\": \"string\",\n      \"userEmail\": \"string\",\n      \"spendCents\": 2379,\n      \"hardLimit\": 9486.264163483773\n    },\n    {\n      \"userId\": \"string\",\n      \"userEmail\": \"string\",\n      \"spendCents\": 4735,\n      \"hardLimit\": 9508.112939739918\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cursor.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a372e641-bd9c-437f-9094-2a9cc9384750",
+    "name": "Cursor Admin Audit Logs Spend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.\n\nContact Support:\n Name: Cursor Support",
+      "type": "text/plain"
+    }
+  }
+}

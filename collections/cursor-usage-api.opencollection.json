@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cursor Admin Audit Logs Usage API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Usage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get daily usage data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/daily-usage-data",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Aggregated daily usage metrics including lines added/deleted, completions, chat requests, and model usage."
+        },
+        {
+          "info": {
+            "name": "Get filtered usage events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/filtered-usage-events",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Granular event-level usage data including token consumption and costs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

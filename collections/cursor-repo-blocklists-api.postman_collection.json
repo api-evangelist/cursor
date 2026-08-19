@@ -1,0 +1,295 @@
+{
+  "item": [
+    {
+      "id": "a32c0d66-124a-4130-8ca5-860a084a8f35",
+      "name": "Repo Blocklists",
+      "description": {
+        "content": "Repository indexing blocklist configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "47cbee59-3426-4511-9254-194898a50ba6",
+          "name": "Get repo blocklists",
+          "request": {
+            "name": "Get repo blocklists",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "repo-blocklists",
+                "repos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c949716-241d-4410-b2b2-0a2a12c6d2a9",
+              "name": "Configured blocklists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "repo-blocklists",
+                    "repos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "918f0219-0c61-4988-93ac-5325852834c6",
+          "name": "Upsert repo blocklists",
+          "request": {
+            "name": "Upsert repo blocklists",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "repo-blocklists",
+                "repos",
+                "upsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"repos\": [\n    {\n      \"repoUrl\": \"<string>\",\n      \"patterns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"repoUrl\": \"<string>\",\n      \"patterns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "667d33f0-743f-4c22-99e3-9c2adfdfaefc",
+              "name": "Blocklists upserted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "repo-blocklists",
+                    "repos",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"repos\": [\n    {\n      \"repoUrl\": \"<string>\",\n      \"patterns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"repoUrl\": \"<string>\",\n      \"patterns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daf37e8d-ec7d-4464-942f-029c9b5fed6d",
+          "name": "Remove repo from blocklist",
+          "request": {
+            "name": "Remove repo from blocklist",
+            "description": {},
+            "url": {
+              "path": [
+                "settings",
+                "repo-blocklists",
+                "repos",
+                ":repoId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1e58cb9-64d6-454b-bfef-9185e990b97b",
+              "name": "Removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "settings",
+                    "repo-blocklists",
+                    "repos",
+                    ":repoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cursor.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f337c25d-02e1-47fe-844c-f37a5f04641f",
+    "name": "Cursor Admin Audit Logs Repo Blocklists API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.\n\nContact Support:\n Name: Cursor Support",
+      "type": "text/plain"
+    }
+  }
+}

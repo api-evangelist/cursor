@@ -1,0 +1,163 @@
+{
+  "item": [
+    {
+      "id": "5333e994-9c41-427f-ba1d-eb2aca645d2b",
+      "name": "Audit Logs",
+      "description": {
+        "content": "Retrieve security and configuration audit events",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48dcff87-eeaf-437a-8f10-8c331ba019f5",
+          "name": "Get audit logs",
+          "request": {
+            "name": "Get audit logs",
+            "description": {
+              "content": "Fetch audit log events with optional filtering by date, event type, and user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "audit-logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "eventType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba66686f-ace3-4d70-9fc0-16503a1de1e4",
+              "name": "Audit log entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "audit-logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "eventType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"id\": \"string\",\n      \"timestamp\": \"1991-08-27T21:59:36.288Z\",\n      \"eventType\": \"string\",\n      \"userId\": \"string\",\n      \"userEmail\": \"string\",\n      \"details\": {}\n    },\n    {\n      \"id\": \"string\",\n      \"timestamp\": \"1961-12-13T08:51:01.136Z\",\n      \"eventType\": \"string\",\n      \"userId\": \"string\",\n      \"userEmail\": \"string\",\n      \"details\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cursor.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b1c48d72-6a42-41a1-8505-d04cd3774bad",
+    "name": "Cursor Admin Audit Logs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.\n\nContact Support:\n Name: Cursor Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "item": [
+    {
+      "id": "63afc157-4f99-49db-981f-65b17ac8623a",
+      "name": "Usage",
+      "description": {
+        "content": "Daily usage and granular usage event data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "46c14e10-a620-4fac-a296-df410519692b",
+          "name": "Get daily usage data",
+          "request": {
+            "name": "Get daily usage data",
+            "description": {
+              "content": "Aggregated daily usage metrics including lines added/deleted, completions, chat requests, and model usage.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "daily-usage-data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startDate\": \"<date>\",\n  \"endDate\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "190633fe-2017-4993-a4d3-edaf5812fdb0",
+              "name": "Daily usage metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "daily-usage-data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"startDate\": \"<date>\",\n  \"endDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"date\": \"1991-09-25\",\n      \"userId\": \"string\",\n      \"linesAdded\": 5513,\n      \"linesDeleted\": 6503,\n      \"completions\": 3081,\n      \"chatRequests\": 1576,\n      \"modelUsage\": {\n        \"key_0\": 2016,\n        \"key_1\": 7946,\n        \"key_2\": 7409\n      }\n    },\n    {\n      \"date\": \"1956-06-22\",\n      \"userId\": \"string\",\n      \"linesAdded\": 1477,\n      \"linesDeleted\": 461,\n      \"completions\": 6403,\n      \"chatRequests\": 6532,\n      \"modelUsage\": {\n        \"key_0\": 695\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edd9e64a-c240-4b55-acce-f10afde03918",
+          "name": "Get filtered usage events",
+          "request": {
+            "name": "Get filtered usage events",
+            "description": {
+              "content": "Granular event-level usage data including token consumption and costs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "teams",
+                "filtered-usage-events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startDate\": \"<date>\",\n  \"endDate\": \"<date>\",\n  \"userId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4082ca0-77c8-4832-a2d6-6f037a836c45",
+              "name": "Filtered usage events",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "teams",
+                    "filtered-usage-events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"startDate\": \"<date>\",\n  \"endDate\": \"<date>\",\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cursor.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6759cadc-fe90-4372-a81d-36aadea56f0b",
+    "name": "Cursor Admin Audit Logs Usage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.\n\nContact Support:\n Name: Cursor Support",
+      "type": "text/plain"
+    }
+  }
+}

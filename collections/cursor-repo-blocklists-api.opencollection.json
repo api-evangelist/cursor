@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cursor Admin Audit Logs Repo Blocklists API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Repo Blocklists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get repo blocklists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cursor.com/settings/repo-blocklists/repos"
+          },
+          "docs": "Get repo blocklists"
+        },
+        {
+          "info": {
+            "name": "Upsert repo blocklists",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/settings/repo-blocklists/repos/upsert",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upsert repo blocklists"
+        },
+        {
+          "info": {
+            "name": "Remove repo from blocklist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.cursor.com/settings/repo-blocklists/repos/:repoId",
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove repo from blocklist"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

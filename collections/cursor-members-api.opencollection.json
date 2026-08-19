@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cursor Admin Audit Logs Members API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Members",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get team members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cursor.com/teams/members"
+          },
+          "docs": "Retrieve all team members and their details (id, email, name, role, removal status)."
+        },
+        {
+          "info": {
+            "name": "Remove team member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/remove-member",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Programmatically offboard a user. Enterprise only."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

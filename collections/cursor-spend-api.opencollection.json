@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cursor Admin Audit Logs Spend API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Spend",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set user spend limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/user-spend-limit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Control an individual user's spend cap in dollars. Enterprise only."
+        },
+        {
+          "info": {
+            "name": "Get spending data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cursor.com/teams/spend",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Per-user spend for the current billing cycle with search and sorting."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
