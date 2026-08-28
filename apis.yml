@@ -6,6 +6,18 @@ description: >-
   Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase
   chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a
   public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
