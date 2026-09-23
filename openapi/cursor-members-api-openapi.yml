@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Cursor Admin Audit Logs Members API
+  title: Cursor Admin Members API
   description: The Cursor Admin API allows team and enterprise administrators to programmatically manage members, billing groups, audit logs, daily usage data, spending, repository indexing blocklists, and per-user spend limits for their Cursor team. Authentication uses HTTP Basic Authentication with the API key as the username and an empty password.
   version: 1.0.0
   contact:
