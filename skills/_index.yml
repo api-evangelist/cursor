@@ -1,0 +1,24 @@
+generated: '2026-10-03'
+method: generated
+generator: extract-docs-artifacts.py skills (local)
+source: openapi/cursor-groups-api-openapi.yml
+skills:
+- file: skills/cursor-spend-management.md
+  name: cursor-spend-management
+  api: openapi/cursor-spend-api-openapi.yml
+  operations:
+  - setUserSpendLimit
+  - getSpend
+- file: skills/cursor-remove-team-member.md
+  name: cursor-remove-team-member
+  api: openapi/cursor-members-api-openapi.yml
+  operations:
+  - getTeamMembers
+  - removeTeamMember
+- file: skills/cursor-manage-repo-blocklists.md
+  name: cursor-manage-repo-blocklists
+  api: openapi/cursor-repo-blocklists-api-openapi.yml
+  operations:
+  - getRepoBlocklists
+  - upsertRepoBlocklists
+  - deleteRepoBlocklist

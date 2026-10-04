@@ -1,11 +1,15 @@
 aid: cursor
+
 url: https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/apis.yml
+
 name: Cursor
+
 kind: company
-description: >-
-  Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase
-  chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a
-  public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.
+
+description: 'Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase chat, autocomplete,
+  and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a public Admin API, Analytics API, AI Code Tracking
+  API, Cloud Agents API, and a TypeScript SDK.'
+
 deliveryModel:
   model: saas
   open_source: false
@@ -18,6 +22,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -32,30 +37,120 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cursor.png
+
 tags:
-  - Artificial Intelligence
-  - Developer Tools
-  - Code Editor
-  - Agents
-  - IDE
-  - Cloud Agents
+- Artificial Intelligence
+- Developer Tools
+- Code Editor
+- Agents
+- IDE
+- Cloud Agents
+
 tags_raw:
-  - AI
-  - Developer Tools
-  - Code Editor
-  - Agent
-  - IDE
-  - Cloud Agents
+- AI
+- Developer Tools
+- Code Editor
+- Agent
+- IDE
+- Cloud Agents
+
 created: '2026-05-08'
+
 modified: '2026-05-19'
+
 specificationVersion: '0.23'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: Spectral
+  url: rules/cursor-rules.yml
+- type: Spectral
+  url: rules/cursor-jsonschema-spectral-rules.yml
+- type: Spectral
+  url: rules/cursor-admin-api-rules.yml
+- type: JSONLD
+  url: json-ld/cursor-context.jsonld
+- type: Vocabulary
+  url: vocabulary/cursor-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/cursor-webhooks.yml
+- type: DataModel
+  url: data-model/cursor-data-model.yml
+- type: ChangeLog
+  url: changelog/cursor-changelog.yml
+- type: Compliance
+  url: https://cursor.com/security
+- type: Security
+  url: security/cursor-vulnerability-disclosure.yml
+- type: Conformance
+  url: conformance/cursor-conformance.yml
+- type: Overlay
+  url: overlays/cursor-audit-logs-api-overlay.yaml
+- type: LLMsTxt
+  url: llms/cursor-llms.txt
+- type: SecurityTxt
+  url: well-known/cursor-status-security.txt
+- type: SecurityTxt
+  url: well-known/cursor-security.txt
+- type: WellKnown
+  url: well-known/cursor-well-known.yml
+- type: Hosts
+  url: hosts/cursor-hosts.yml
+- type: Vendors
+  url: vendors/cursor-vendors.yml
+- type: TermsOfService
+  url: https://cursor.com/en-US/terms-of-service
+- type: Support
+  url: https://cursor.com/help
+- type: StatusPage
+  url: https://status.cursor.com/
+- type: PrivacyPolicy
+  url: https://cursor.com/privacy
+- type: GettingStarted
+  url: https://cursor.com/docs/get-started/quickstart
+- type: TrustCenter
+  url: security/cursor-trust-center.yml
+- type: AgenticAccess
+  url: agentic-access/cursor-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/cursor-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/cursor-domain-security.yml
+- type: Authentication
+  url: authentication/cursor-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/cursor
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cursorai
+- type: Website
+  url: https://cursor.com/
+- type: Documentation
+  url: https://cursor.com/docs
+- type: Pricing
+  url: https://cursor.com/pricing
+- type: Plans
+  url: plans/cursor-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cursor-rate-limits.yml
+- type: FinOps
+  url: finops/cursor-finops.yml
+- type: LlmsText
+  url: https://cursor.com/llms.txt
+- url: https://cursor.com/blog
+  type: Blog
+
 apis:
 - aid: cursor:admin
   name: Cursor Admin API
-  description: >-
-    Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered
-    usage events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.
+  description: 'Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered usage events. Available
+    to Enterprise teams. Uses HTTP Basic auth with API key as username.'
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://cursor.com/docs/account/teams/admin-api
   baseURL: https://api.cursor.com
@@ -133,6 +228,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cursor-audit-logs-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/cursor-audit-event-schema.json
 - aid: cursor:cursor-groups-api
   name: Cursor Groups API
   description: Billing groups for cost allocation
@@ -155,6 +252,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cursor-members-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/cursor-member-schema.json
 - aid: cursor:cursor-repo-blocklists-api
   name: Cursor Repo Blocklists API
   description: Repository indexing blocklist configuration
@@ -175,6 +274,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cursor-spend-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/cursor-user-spend-schema.json
 - aid: cursor:cursor-usage-api
   name: Cursor Usage API
   description: Daily usage and granular usage event data
@@ -185,35 +286,11 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cursor-usage-api-openapi.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/cursor-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/cursor-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/cursor-domain-security.yml
-  - type: Authentication
-    url: authentication/cursor-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/cursor
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/cursorai
-  - type: Website
-    url: https://cursor.com/
-  - type: Documentation
-    url: https://cursor.com/docs
-  - type: Pricing
-    url: https://cursor.com/pricing
-  - type: Plans
-    url: plans/cursor-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/cursor-rate-limits.yml
-  - type: FinOps
-    url: finops/cursor-finops.yml
-  - type: LlmsText
-    url: https://cursor.com/llms.txt
-  - url: https://cursor.com/blog
-    type: Blog
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+  - type: JSONSchema
+    url: json-schema/cursor-daily-usage-schema.json
+x-enrichment:
+  date: '2026-10-03'
+  status: enriched
+  artifacts_added: 21
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

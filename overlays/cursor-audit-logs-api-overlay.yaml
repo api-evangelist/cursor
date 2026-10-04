@@ -1,0 +1,6 @@
+generated: 2026-10-03
+method: derived
+source: openapi/cursor-audit-logs-api-openapi.yml
+overlay:
+  version: 1.0.0
+  actions: []

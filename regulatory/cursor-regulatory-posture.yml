@@ -1,0 +1,22 @@
+generated: '2026-10-03'
+source: https://cursor.com/privacy
+method: searched
+signals:
+  data_subject_request:
+    - source: https://cursor.com/privacy
+      http_status: 200
+      fetched: true
+      quote: "Depending on where you live and the laws that apply in your country of residence, you may have certain rights in relation to your personal data. These may include the right to access, delete, correct, or transfer your personal data; to object to or restrict how we process it; or to withdraw your consent where processing is based on consent."
+      note: Provides data subject rights including access, deletion, correction, portability, objection, restriction, and withdrawal of consent.
+  subprocessors:
+    - source: https://cursor.com/privacy
+      http_status: 200
+      fetched: true
+      quote: "Subprocessors: For commercial uses of the Service where Anysphere acts as a data processor, you can review the third parties we engage on at trust.cursor.com/subprocessors."
+      note: Indicates existence of subprocessors and provides link to their list.
+  data_retention:
+    - source: https://cursor.com/privacy
+      http_status: 200
+      fetched: true
+      quote: "Anysphere retains your personal data only for as long as necessary to operate the Service effectively and to support legitimate business needs such as legal compliance, safety, dispute resolution, and enforcement of our agreements."
+      note: Describes retention policy based on necessity and legal requirements.

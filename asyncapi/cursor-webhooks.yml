@@ -1,0 +1,15 @@
+generated: '2026-10-03'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://cursor.com/docs/cloud-agent/api/webhooks
+sources:
+- https://cursor.com/docs/cloud-agent/api/webhooks
+description: Cursor webhooks notify you about status changes of an agent.
+events:
+- event: statusChange
+  description: Sent when an agent transitions to an ERROR or FINISHED state.
+delivery:
+  signature: HMAC-SHA256
+  content_type: application/json
+note: Webhooks may be retried if your endpoint returns an error status code.
+docs: https://cursor.com/docs/cloud-agent/api/webhooks
