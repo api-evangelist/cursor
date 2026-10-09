@@ -1,61 +1,20 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/cursor-admin-api-openapi.yml
+source: openapi/cursor-audit-logs-api-openapi.yml, openapi/cursor-groups-api-openapi.yml, openapi/cursor-members-api-openapi.yml,
+  openapi/cursor-repo-blocklists-api-openapi.yml, openapi/cursor-spend-api-openapi.yml, openapi/cursor-usage-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 17
   by_action_class:
-    connected: 5
-    acting: 12
+    connected: 8
+    acting: 9
   by_consequence:
-    read: 5
-    write: 12
+    read: 8
+    write: 9
   human_in_the_loop_required: 0
 operations:
-- path: /teams/members
-  method: get
-  operationId: getTeamMembers
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /teams/remove-member
-  method: post
-  operationId: removeTeamMember
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /teams/user-spend-limit
-  method: post
-  operationId: setUserSpendLimit
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /teams/audit-logs
   method: get
   operationId: getAuditLogs
@@ -66,54 +25,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /teams/daily-usage-data
-  method: post
-  operationId: getDailyUsageData
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /teams/spend
-  method: post
-  operationId: getSpend
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /teams/filtered-usage-events
-  method: post
-  operationId: getFilteredUsageEvents
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /teams/groups
   method: get
   operationId: listGroups
@@ -214,6 +125,32 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /teams/members
+  method: get
+  operationId: getTeamMembers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /teams/remove-member
+  method: post
+  operationId: removeTeamMember
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /settings/repo-blocklists/repos
   method: get
   operationId: getRepoBlocklists
@@ -256,3 +193,49 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /teams/user-spend-limit
+  method: post
+  operationId: setUserSpendLimit
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /teams/spend
+  method: post
+  operationId: getSpend
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /teams/daily-usage-data
+  method: post
+  operationId: getDailyUsageData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /teams/filtered-usage-events
+  method: post
+  operationId: getFilteredUsageEvents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
