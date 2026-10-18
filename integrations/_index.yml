@@ -94,7 +94,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: cursor-fivetran
   label: Fivetran
@@ -120,5 +120,5 @@
     - connectors/applications/cursor
     vendor_link: https://cursor.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
