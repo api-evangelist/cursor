@@ -122,3 +122,158 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: cursor-homebrew
+  label: Homebrew
+  partner: homebrew
+  partner_name: Homebrew
+  category: official CLI (Homebrew)
+  type: register
+  channel: package-registry
+  evidence: https://formulae.brew.sh/cask/cursor-cli
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Homebrew (public package index)
+    spec_file: null
+    packages:
+    - name: cursor-cli
+      kind: cask
+      version: 2026.10.19-6bbf2c4
+      released: null
+      lapsed: false
+      page: https://formulae.brew.sh/cask/cursor-cli
+      cli: cask binary artifact
+      repo_leg: domain:cursor.com
+      publisher_leg: artifact-domain:cursor.com
+      matched_by: domain+name-among-holders
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: cursor-scoop
+  label: Scoop
+  partner_name: Scoop
+  category: official CLI (Scoop)
+  type: register
+  channel: package-registry
+  evidence: https://github.com/ScoopInstaller/Main/blob/master/bucket/cursor-cli.json
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Scoop (public package index)
+    spec_file: null
+    packages:
+    - name: cursor-cli
+      kind: main
+      version: 2026.10.19-6bbf2c4
+      released: null
+      lapsed: false
+      page: https://github.com/ScoopInstaller/Main/blob/master/bucket/cursor-cli.json
+      cli: 'scoop description: CLI for Cursor, allowing you to interact with AI agents directly from your termi'
+      repo_leg: domain:cursor.com
+      publisher_leg: artifact-domain:cursor.com
+      matched_by: domain+name-among-holders
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: cursor-agent-skills-own-github-org
+  label: Agent Skills (own GitHub org)
+  partner_name: Agent Skills (own GitHub org)
+  category: Agent Skills package
+  type: register
+  channel: provider-built
+  evidence: https://github.com/cursor/plugins
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: 'provider''s own GitHub org (GitHub REST API: repo + git tree holds SKILL.md)'
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-repo
+    matched_org: cursor
+    matched_by: org-profile-domain-among-claimants:cursor.com
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: cursor-skills-sh
+  label: skills.sh
+  partner_name: skills.sh
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://www.skills.sh/cursor/plugins
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: skills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: cursor
+    matched_by: org-profile-domain-among-claimants:cursor.com
+    sample_skills:
+    - architect
+    - arena
+    - automate-me
+    - benchmark-checklist
+    - blast-radius
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: cursor-claude-plugins-dev
+  label: claude-plugins.dev
+  partner_name: claude-plugins.dev
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://claude-plugins.dev/skills/@cursor/plugins
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: claude-plugins.dev (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: cursor
+    matched_by: org-profile-domain-among-claimants:cursor.com
+    sample_skills:
+    - thermo-nuclear-code-quality-review
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: cursor-skillsmp-skillsmp-com
+  label: SkillsMP (skillsmp.com)
+  partner_name: SkillsMP (skillsmp.com)
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://skillsmp.com/creators/cursor/plugins
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: SkillsMP (skillsmp.com) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: cursor
+    matched_by: org-profile-domain-among-claimants:cursor.com
+    sample_skills:
+    - dyl-stack-skills-build-figma
+    - dyl-stack-skills-dyl-mode
+    - pstack-skills-poteto-mode
+    - pstack-skills-setup-pstack
+    - pstack-skills-technical-writing
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
