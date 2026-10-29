@@ -1,4 +1,4 @@
-# Cursor (cursor)
+# Cursor
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,116 +66,182 @@
 
 Cursor is an AI-first code editor by Anysphere, forked from VS Code, with deep AI integration: agentic edits, codebase chat, autocomplete, and tab-completion. Offers a hosted plan with model access and team management. Cursor exposes a public Admin API, Analytics API, AI Code Tracking API, Cloud Agents API, and a TypeScript SDK.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cursor/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Developer Tools · Code Editor · Agents · IDE · Cloud Agents
 
-## Tags
+## Cursor on APIs.io
 
-- AI
-- Developer Tools
-- Code Editor
-- Agent
-- IDE
-- Cloud Agents
+Everything profiled for Cursor is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cursor/](https://apis.io/providers/cursor/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (10)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-19
+- [Cursor Admin API](https://apis.io/apis/cursor/admin/) — Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered usage events. Available to Enterprise teams. Uses…
+- [Cursor Analytics API](https://apis.io/apis/cursor/analytics/) — Usage insights, AI metrics, and model usage stats for Enterprise teams.
+- [Cursor AI Code Tracking API](https://apis.io/apis/cursor/ai-code-tracking/) — Track AI-generated code at the commit level for Enterprise teams.
+- [Cursor Cloud Agents API](https://apis.io/apis/cursor/cloud-agents/) — Create and manage AI coding agents in the cloud. Beta, available across all plans.
+- [Cursor Audit Logs API](https://apis.io/apis/cursor/cursor-audit-logs-api/) — Retrieve security and configuration audit events
+- [Cursor Groups API](https://apis.io/apis/cursor/cursor-groups-api/) — Billing groups for cost allocation
+- [Cursor Members API](https://apis.io/apis/cursor/cursor-members-api/) — Manage team members
+- [Cursor Repo Blocklists API](https://apis.io/apis/cursor/cursor-repo-blocklists-api/) — Repository indexing blocklist configuration
+- [Cursor Spend API](https://apis.io/apis/cursor/cursor-spend-api/) — Spending data and per-user spend limits
+- [Cursor Usage API](https://apis.io/apis/cursor/cursor-usage-api/) — Daily usage and granular usage event data
 
-## APIs
+### Published properties
 
-### Cursor Admin API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Programmatic access to team data: members, usage metrics, spending, repository blocklists, daily/filtered usage events. Available to Enterprise teams. Uses HTTP Basic auth with API key as username.
+#### AsyncAPI (1)
 
-- **Human URL:** [https://cursor.com/docs/account/teams/admin-api](https://cursor.com/docs/account/teams/admin-api)
-- **Base URL:** `https://api.cursor.com`
+Event-driven and webhook contracts.
 
-#### Tags
+- [Cursor Webhooks](https://apis.io/asyncapis/cursor/cursor-webhooks/)
 
-- Admin
-- Teams
-- Usage
-- Billing
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://cursor.com/docs/account/teams/admin-api)
-- [A P I Index](https://cursor.com/docs/api)
-- [Postman Collection](collections/cursor-admin-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cursor-admin-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cursor Agentic Access](https://apis.io/agentic-access/cursor/cursor-agentic-access/)
 
-### Cursor Analytics API
+#### JSON Schema (4)
 
-Usage insights, AI metrics, and model usage stats for Enterprise teams.
+The data models the API reads and writes.
 
-- **Human URL:** [https://cursor.com/docs/account/teams/analytics-api](https://cursor.com/docs/account/teams/analytics-api)
-- **Base URL:** `https://api.cursor.com`
+- [Cursor Audit Event](https://apis.io/schemas/cursor/cursor-audit-event/)
+- [Cursor Daily Usage Record](https://apis.io/schemas/cursor/cursor-daily-usage/)
+- [Cursor Team Member](https://apis.io/schemas/cursor/cursor-member/)
+- [UserSpend](https://apis.io/schemas/cursor/cursor-user-spend/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Analytics
-- Teams
-- Metrics
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Cursor Context](https://apis.io/jsonld/cursor/cursor-context/)
 
-- [Documentation](https://cursor.com/docs/account/teams/analytics-api)
-- [Postman Collection](collections/cursor-admin-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cursor-admin-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Vocabulary (1)
 
-### Cursor AI Code Tracking API
+The provider's domain terms, defined.
 
-Track AI-generated code at the commit level for Enterprise teams.
+- [Cursor Vocabulary](https://apis.io/vocabularies/cursor/cursor-vocabulary/)
 
-- **Human URL:** [https://cursor.com/docs/api](https://cursor.com/docs/api)
-- **Base URL:** `https://api.cursor.com`
+#### Collections (7)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- AI Tracking
-- Commits
-- Teams
+- [Cursor Admin API](https://apis.io/collections/cursor/open-cursor-admin-api/)
+- [Cursor Admin Audit Logs API](https://apis.io/collections/cursor/open-cursor-audit-logs-api/)
+- [Cursor Admin Audit Logs Groups API](https://apis.io/collections/cursor/open-cursor-groups-api/)
+- [Cursor Admin Audit Logs Members API](https://apis.io/collections/cursor/open-cursor-members-api/)
+- [Cursor Admin Audit Logs Repo Blocklists API](https://apis.io/collections/cursor/open-cursor-repo-blocklists-api/)
+- [Cursor Admin Audit Logs Spend API](https://apis.io/collections/cursor/open-cursor-spend-api/)
+- [Cursor Admin Audit Logs Usage API](https://apis.io/collections/cursor/open-cursor-usage-api/)
 
-#### Properties
+#### Overlays (1)
 
-- [Documentation](https://cursor.com/docs/api)
-- [Postman Collection](collections/cursor-admin-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cursor-admin-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+OpenAPI overlays, including conversational phrasing for each operation.
 
-### Cursor Cloud Agents API
+- [Cursor Audit Logs Api Overlay](https://apis.io/overlays/cursor/cursor-audit-logs-api-overlay/)
 
-Create and manage AI coding agents in the cloud. Beta, available across all plans.
+#### Governance rules (3)
 
-- **Human URL:** [https://cursor.com/docs/api](https://cursor.com/docs/api)
-- **Base URL:** `https://api.cursor.com`
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [Cursor — admin api rules](https://apis.io/rules/cursor/cursor-admin-api-rules/)
+- [Cursor — jsonschema rules](https://apis.io/rules/cursor/cursor-jsonschema-spectral-rules/)
+- [Cursor API Rules](https://apis.io/rules/cursor/cursor-rules/)
 
-- Agents
-- Cloud
-- Beta
+#### Security (4)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://cursor.com/docs/api)
-- [Type Script S D K](https://cursor.com/docs/api)
-- [Postman Collection](collections/cursor-admin-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cursor-admin-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cursor Authentication](https://apis.io/security/cursor/cursor-authentication/)
+- [Cursor Domain Security](https://apis.io/security/cursor/cursor-domain-security/)
+- [Cursor Trust Center](https://apis.io/security/cursor/cursor-trust-center/)
+- [Cursor Vulnerability Disclosure](https://apis.io/security/cursor/cursor-vulnerability-disclosure/)
 
-## Common Properties
+#### Plans and pricing (1)
 
-- [GitHub Organization](https://github.com/cursor)
-- [LinkedIn](https://www.linkedin.com/company/cursorai)
+Published plans, tiers and prices.
+
+- [Cursor Plans Pricing](https://apis.io/plans/cursor/cursor-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cursor Rate Limits](https://apis.io/rate-limits/cursor/cursor-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Cursor Finops](https://apis.io/finops/cursor/cursor-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://cursor.com/)
 - [Documentation](https://cursor.com/docs)
+- [Getting started](https://cursor.com/docs/get-started/quickstart)
 - [Pricing](https://cursor.com/pricing)
-- [Plans](plans/cursor-plans-pricing.yml)
-- [Rate Limits](rate-limits/cursor-rate-limits.yml)
-- [Fin Ops](finops/cursor-finops.yml)
-- [L L Ms Txt](https://cursor.com/llms.txt)
+- [Support](https://cursor.com/help)
+- [Blog](https://cursor.com/blog)
+- [Compliance](https://cursor.com/security)
+- [Terms of service](https://cursor.com/en-US/terms-of-service)
+- [Privacy policy](https://cursor.com/privacy)
+- [GitHub](https://github.com/cursor)
+- [Status](https://status.cursor.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 59.1** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 64.4 |
+| Contract governance | 31.8 |
+| Operational transparency | 57.9 |
+| Developer ergonomics | 32.7 |
+| Access clarity | 68.4 |
+
+**Agent readiness 28.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cursor/](https://apis.io/providers/cursor/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cursor: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cursor/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
